@@ -1,4 +1,5 @@
 <template>
+<router-link v-bind:to="/product/+product.id">
   <div class="product-card">
       <img
           width="200px"
@@ -7,6 +8,7 @@
     <h1>{{product.name}}</h1>
     <div>{{product.price}}</div>
   </div>
+  </router-link>
 </template>
 
 <script>

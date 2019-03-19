@@ -1,5 +1,16 @@
 <template>
   <div class="shop">
-    <h1>This is the individual product</h1>
+    <img
+          width="200px"
+          v-bind:src="product.imageurl"
+        >
+    <h1>{{product.name}}</h1>
+    <div>{{product.price}}</div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["product"]
+};
+</script>
