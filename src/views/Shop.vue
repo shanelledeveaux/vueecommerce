@@ -5,7 +5,8 @@
         v-for="product in productList"
         v-bind:product="product"
         v-bind:key="product.id"
-    ></smallProductCard>
+    >
+    </smallProductCard>
   </div>
 </template>
 
