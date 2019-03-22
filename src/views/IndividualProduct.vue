@@ -1,16 +1,28 @@
 <template>
-  <div class="shop">
+  <div class="shop flexbox">
     <img
-          width="200px"
-          v-bind:src="product.imageurl"
+          class="largeimage"
+          v-bind:src="currentProduct[0].imageurl"
         >
-    <h1>{{product.name}}</h1>
-    <div>{{product.price}}</div>
+    <div>
+    <div>REVIEWS</div>
+    <h1>{{currentProduct[0].name}}</h1>
+    <div>{{currentProduct[0].price}}</div>
+    <div>Quantity</div>
+    <button>ADD TO BAG</button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["product"]
+  props: ["product"],
+  computed: {
+    currentProduct() {
+      return this.$store.state.products.filter(
+        product => product.id == this.$route.params.id
+      );
+    }
+  }
 };
 </script>
