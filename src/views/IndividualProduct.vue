@@ -6,9 +6,18 @@
         >
     <div>
     <div>REVIEWS</div>
-    <h1>{{currentProduct[0].name}}</h1>
+    <h1 class="accentfont">{{currentProduct[0].name}}</h1>
     <div>{{currentProduct[0].price}}</div>
     <div>Quantity</div>
+    <div>
+      <button v-on:click="quantity += 1">
+        +
+      </button>
+      {{this.quantity}}
+      <button v-on:click="quantity -= 1">
+        -
+      </button>
+    </div>
     <button>ADD TO BAG</button>
     </div>
   </div>
@@ -17,6 +26,9 @@
 <script>
 export default {
   props: ["product"],
+  data: () => ({
+    quantity: 1
+  }),
   computed: {
     currentProduct() {
       return this.$store.state.products.filter(

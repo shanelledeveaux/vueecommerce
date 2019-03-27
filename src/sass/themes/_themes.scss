@@ -1,7 +1,12 @@
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+.app {
+  font-family: $mainfont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #68d3c5;
+}
+
+.accentfont {
+  font-family: $accentfont;
+  font-size: 25px;
 }
