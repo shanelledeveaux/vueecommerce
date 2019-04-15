@@ -29,7 +29,7 @@ app.use(
 
 app.get("/api/products", mc.getInventory);
 app.get("/api/session", (req, res) => {
-  return res.status(200).send(res.session);
+  return res.status(200).send(req.sessionID);
 });
 
 const port = 3001;
