@@ -1,0 +1,1 @@
+INSERT INTO ecommerce_cart (session_id, product_id, quantity) values ($1, $2, $3);

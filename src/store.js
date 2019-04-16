@@ -24,9 +24,7 @@ export default new Vuex.Store({
         .then(res => this.commit("GET_PRODUCTS", res.data));
     },
     addToCart(context, item) {
-      axios.post("/api/cart", item).then(res => {
-        this.commit("ADD_TO_CART", res.data);
-      });
+      axios.post("/api/cart", item);
     }
   }
 });
