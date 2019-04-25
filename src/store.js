@@ -15,6 +15,9 @@ export default new Vuex.Store({
     },
     ADD_TO_CART(state, cart) {
       state.cart = cart;
+    },
+    GET_CART(state, cart) {
+      state.cart = cart;
     }
   },
   actions: {
@@ -25,6 +28,9 @@ export default new Vuex.Store({
     },
     addToCart(context, item) {
       axios.post("/api/cart", item);
+    },
+    getCart() {
+      axios.get("/api/getcart").then(res => this.commit("GET_CART", res.data));
     }
   }
 });

@@ -7,6 +7,15 @@ const getInventory = (req, res) => {
     .catch(console.log);
 };
 
+const getCart = (req, res) => {
+  const dbInstance = req.app.get("db");
+
+  dbInstance
+    .get_cart()
+    .then(response => res.status(200).send(response))
+    .catch(console.log);
+};
+
 const addToCart = (req, res) => {
   const dbInstance = req.app.get("db");
   const item = req.body;
@@ -19,5 +28,6 @@ const addToCart = (req, res) => {
 
 module.exports = {
   getInventory,
-  addToCart
+  addToCart,
+  getCart
 };

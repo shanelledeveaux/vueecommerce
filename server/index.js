@@ -28,6 +28,7 @@ app.use(
 );
 
 app.get("/api/products", mc.getInventory);
+app.get("/api/getcart", mc.getCart);
 app.post("/api/cart", mc.addToCart);
 
 const port = 3001;
