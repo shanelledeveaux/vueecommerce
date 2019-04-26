@@ -1,0 +1,18 @@
+@import "../abstracts/_variables";
+
+.cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cart-item-container {
+  width: 50%;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.cart-summary-container {
+  background-color: #489187;
+  width: 50%;
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="cart">
     <div class="cart-item-container">
     <cartItem
       v-for="item in cart"
@@ -8,7 +8,7 @@
     >
     </cartItem>
     </div>
-    <div>
+    <div class="cart-summary-container">
       <orderSummary/>
     </div>
   </div>
