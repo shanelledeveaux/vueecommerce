@@ -10,24 +10,24 @@ const getInventory = (req, res) => {
 const getCart = (req, res) => {
   const dbInstance = req.app.get("db");
 
-  let subtotal = 0;
-  const cart = [];
+  const cart = {
+    subtotal: 0,
+    tax: 0,
+    orderTotal: 0,
+    items: []
+  };
 
   dbInstance
     .get_cart()
-    .then(
-      response =>
-        Object.keys(response).forEach(key => {
-          subtotal = subtotal + parseInt(response[key].price);
-          console.log(response[key].price);
-          cart.push(response[key]);
-        }),
-      (cart.subtotal = subtotal),
-      (cart.tax = subtotal * 0.0825),
-      (cart.orderTotal = subtotal * 1.0825),
-      console.log(cart)
-    )
-    .then(cart => console.log(cart))
+    .then(response => {
+      for (let i = 0; i < response.length; i++) {
+        cart.subtotal += response[i].price;
+        cart.items.push(response[i]);
+      }
+      cart.tax = cart.subtotal * 0.0825;
+      cart.orderTotal = cart.subtotal * 1.0825;
+      res.status(200).send(cart);
+    })
     .catch(console.log);
 };
 
@@ -38,7 +38,7 @@ const addToCart = (req, res) => {
   dbInstance
     .add_to_cart(req.sessionID, item.productId, item.quantity)
     .then(response => res.status(200).send(response))
-    .catch(console.log);
+    .catch(console.log());
 };
 
 module.exports = {
