@@ -2,14 +2,19 @@
   <div class="cart">
     <div class="cart-item-container">
     <cartItem
-      v-for="item in cart"
+      v-for="item in cart.items"
       v-bind:item="item"
       v-bind:key="item.cart_item_id"
     >
     </cartItem>
     </div>
     <div class="cart-summary-container">
-      <orderSummary/>
+      <orderSummary
+        v-bind:order-total="cart.orderTotal"
+        v-bind:subtotal="cart.subtotal"
+        v-bind:tax="cart.tax"
+      >  
+      </orderSummary>
     </div>
   </div>
 </template>

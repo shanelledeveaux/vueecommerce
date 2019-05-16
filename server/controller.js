@@ -1,3 +1,5 @@
+const round = num => Number(Math.round(num + "e2") + "e-2");
+
 const getInventory = (req, res) => {
   const dbInstance = req.app.get("db");
 
@@ -24,8 +26,8 @@ const getCart = (req, res) => {
         cart.subtotal += response[i].price;
         cart.items.push(response[i]);
       }
-      cart.tax = cart.subtotal * 0.0825;
-      cart.orderTotal = cart.subtotal * 1.0825;
+      cart.tax = round(cart.subtotal * 0.0825);
+      cart.orderTotal = round(cart.subtotal * 1.0825);
       res.status(200).send(cart);
     })
     .catch(console.log);
