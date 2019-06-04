@@ -1,12 +1,30 @@
+@import "../abstracts/_variables";
+
 .app {
   font-family: $mainfont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #68d3c5;
+  color: $mediumdark;
 }
 
 .accentfont {
   font-family: $accentfont;
   font-size: 25px;
+}
+
+.button {
+  transition-duration: 0.3s;
+  background: none;
+  border: 1px solid $medium;
+  padding: 5px;
+  margin: 2px;
+  font-family: $mainfont;
+  font-size: 15px;
+  color: $medium;
+
+  &:hover {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.096),
+      0 5px 10px 0 rgba(0, 0, 0, 0.089);
+  }
 }

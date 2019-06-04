@@ -8,8 +8,8 @@
     <h1>{{item.name}}</h1>
     <div>{{item.price}}</div>
     <div>{{item.quantity}}</div>
-    <button>edit</button>
-    <button>trash</button>
+    <button class="button">edit</button>
+    <button class="button">trash</button>
   </div>
 
 </template>

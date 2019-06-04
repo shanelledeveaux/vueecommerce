@@ -21,7 +21,7 @@
         <span>{{orderTotal}}</span>
       </div>
     </div>
-    <button>Checkout</button>
+    <button class="button">Checkout</button>
   </div>
 </template>
 

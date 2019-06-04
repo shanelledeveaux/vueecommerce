@@ -1,11 +1,13 @@
+@import "../abstracts/_variables";
+
 #nav {
   padding: 30px;
   a {
     font-weight: bold;
-    color: #68d3c5;
+    color: $mediumdark;
     text-decoration: none;
   }
   a.router-link-exact-active {
-    color: #9bc95f;
+    color: $lightmedium;
   }
 }

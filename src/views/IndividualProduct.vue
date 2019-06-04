@@ -14,7 +14,7 @@
         +
       </button>
       {{this.quantity}}
-      <button v-on:click="quantity -= 1">
+      <button v-on:click="quantity <= 0 ? 0 : quantity -= 1">
         -
       </button>
     </div>
@@ -29,13 +29,6 @@ export default {
   data: () => ({
     quantity: 1
   }),
-  computed: {
-    currentProduct() {
-      return this.$store.state.products.filter(
-        product => product.id == this.$route.params.id
-      );
-    }
-  },
   methods: {
     addToCart() {
       let product = Object.assign(
