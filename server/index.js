@@ -30,6 +30,7 @@ app.use(
 app.get("/api/products", mc.getInventory);
 app.get("/api/getcart", mc.getCart);
 app.post("/api/cart", mc.addToCart);
+app.delete("/api/removeFromCart/:id", mc.removeFromCart);
 
 const port = 3001;
 app.listen(port, () => {

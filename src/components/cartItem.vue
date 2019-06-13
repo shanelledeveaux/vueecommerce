@@ -9,14 +9,23 @@
     <div>{{item.price}}</div>
     <div>{{item.quantity}}</div>
     <button class="button">edit</button>
-    <button class="button">trash</button>
+    <button class="button" @click="deleteItem(item.cart_item_id)">trash</button>
   </div>
 
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  props: ["item"]
+  props: ["item"],
+
+  methods: {
+    deleteItem(id) {
+      console.log(id);
+      axios.delete(`/api/removeFromCart/${id}`);
+    }
+  }
 };
 </script>
 

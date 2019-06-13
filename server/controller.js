@@ -43,8 +43,20 @@ const addToCart = (req, res) => {
     .catch(console.log());
 };
 
+const removeFromCart = (req, res) => {
+  console.log(req.params);
+  const dbInstance = req.app.get("db");
+  const id = req.params.id;
+
+  dbInstance
+    .remove_from_cart(id)
+    .then(response => res.status(200).send(response))
+    .catch(console.log());
+};
+
 module.exports = {
   getInventory,
   addToCart,
-  getCart
+  getCart,
+  removeFromCart
 };

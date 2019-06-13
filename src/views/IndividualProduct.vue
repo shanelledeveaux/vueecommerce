@@ -29,6 +29,13 @@ export default {
   data: () => ({
     quantity: 1
   }),
+  computed: {
+    currentProduct() {
+      return this.$store.state.products.filter(
+        product => product.id == this.$route.params.id
+      );
+    }
+  },
   methods: {
     addToCart() {
       let product = Object.assign(
@@ -39,7 +46,6 @@ export default {
         }
       );
       this.$store.dispatch("addToCart", product);
-      return "egg";
     }
   }
 };
