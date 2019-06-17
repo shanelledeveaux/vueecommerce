@@ -1,3 +1,27 @@
+@import "../abstracts/_mixins";
+
 .cart-summary {
   width: 100%;
+}
+
+.cart-totals-wrapper {
+  @include wrapperdiv(100%, 50%);
+  //justify-content: center;
+  margin: 0 5% 0 5%;
+  h1 {
+    text-align: center;
+  }
+}
+
+.cart-total-line-item {
+  display: grid;
+  grid-template-columns: auto 25%;
+  grid-gap: 10px;
+  margin: 3%;
+  h4 {
+    align-self: left;
+  }
+  span {
+    align-self: right;
+  }
 }

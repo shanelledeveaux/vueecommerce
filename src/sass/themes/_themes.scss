@@ -4,7 +4,6 @@
   font-family: $mainfont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: $mediumdark;
 }
 
@@ -27,4 +26,8 @@
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.096),
       0 5px 10px 0 rgba(0, 0, 0, 0.089);
   }
+}
+
+h1 {
+  font-size: 20px;
 }
