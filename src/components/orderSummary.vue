@@ -7,7 +7,7 @@
     <div class="cart-totals-wrapper">
       <div class="cart-total-line-item">
         <label>Subtotal</label>
-        <span>{{subtotal}}</span>
+        <span>${{subtotal}}</span>
       </div>
       <div class="cart-total-line-item">
         <label>Estimated Shipping</label>
@@ -15,39 +15,43 @@
       </div>
       <div class="cart-total-line-item">
         <label>Tax</label>
-        <span>{{tax}}</span>
+        <span>${{tax}}</span>
       </div>
       <div class="cart-total-line-item">
         <label>Total</label> 
-        <span>{{orderTotal}}</span>
+        <span>${{orderTotal}}</span>
       </div>
     </div>
     </div>
     <!-- START PAYMENT DETAILS SECTION -->
-    <div>
+    <div class="payment-details-wrapper">
       <h1>Payment Details</h1>
       <div>
-        <div>
+        <div class="payment-details-line">
           <label>
             Card Type:
           </label>
           <input>
         </div>
-        <div>
+        <div class="payment-details-line">
           <label>Card Number:</label>
           <input>
         </div>
-        <div>
+        <div class="payment-details-line">
           <label>
             Card Holder Name:
           </label>
           <input>
         </div>
-        <div>
-          <label>ExpirationDate:</label>
-          <input>
-          <label>CVV:</label>
-          <input>
+        <div class="payment-details-line expiration">
+          <div>
+            <label>Expiration Date:</label>
+            <input>
+          </div>
+          <div>
+            <label>CVV:</label>
+            <input>
+          </div>
         </div>
       </div>
       <button>Place Order</button>
